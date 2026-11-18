@@ -113,6 +113,11 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 
 ---
 
+## 기술 선택과 구현은 공식 가이드 우선
+
+- 언어·라이브러리·프레임워크·데이터베이스·인프라의 설계·구현·설정·운영 방식을 정할 때는 사용 중인 버전에 적용되는 공식 문서와 권장 관례를 먼저 확인하고 최대한 따름
+- 공식 지침의 필수 사항과 권장 사항을 구분. 프로젝트 요구나 실측 결과에 따라 권장 방식과 다르게 선택할 때는 해당 지침과 선택 이유를 명시
+
 ## 문체
 
 - MD 파일과 코드 주석/docstring은 명사형 종결체 사용 (예: "테스트를 진행함" → "테스트 진행", "SKILL.md를 저장함" → "SKILL.md 저장")
@@ -132,8 +137,8 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 **조회 목적의 Git 명령은 사전 확인 없이 실행. 저장소 상태를 바꾸는 명령은 사전 승인 필요.**
 
 - `git status`, `git diff`, `git log` 등 조회 명령은 사전 확인 없이 실행
-- `git add`, `git push`, `git reset`, `git rebase`, `git merge`, `git checkout`, `git branch -D` 등 저장소 상태를 바꾸는 명령은 명령어와 이유를 설명하고 승인받은 후 실행
-- 커밋은 사용자가 직접 함
+- 사용자가 커밋·푸시를 명시적으로 요청한 경우, 요청 범위의 `git add`·`git commit`·`git push`는 해당 요청으로 승인된 것으로 간주. 실행 전 변경 범위와 대상 브랜치 확인
+- 그 외 저장소 상태를 바꾸는 Git 명령은 명령어와 이유를 설명하고 승인받은 후 실행
 
 ## 에이전트/워크플로 규모 제한
 
