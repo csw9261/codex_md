@@ -74,12 +74,17 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 - 별도 `test` 단계의 범위와 문서는 변경 위험과 프로젝트 요구에 따라 결정. Build 단계의 기본 검증은 필수
 - `deploy`는 출시 또는 배포가 필요한 경우에만 진행. `maintain`은 운영 중인 결과물에 필요한 경우 적용
 
-### 프로젝트 문서 형식
+### 지식 문서는 Open Knowledge Format(OKF)으로 작성
 
-- 문서 체계를 새로 정하는 프로젝트의 Plan·Design·Build, 설계 결정, 운영 가이드에는 Open Knowledge Format(OKF)을 기본 적용.
-- OKF 문서 작성·갱신 시 프로젝트가 채택한 버전의 [공식 명세](https://github.com/open-knowledge-format/open-knowledge-format/blob/main/SPEC.md) 준수. 작성 절차와 템플릿은 [공식 작성 가이드 `okf-generate`](https://github.com/open-knowledge-format/open-knowledge-format/blob/main/skills/okf-generate/SKILL.md) 참고.
-- 적용 범위, 채택 버전과 해당 버전의 명세 링크, 추가 필수 필드, 검사 방법은 프로젝트 문서 안내에 기록. 문서 변경 후 프로젝트에 정해진 검사 실행.
-- 기존 프로젝트의 문서 형식과 적용 버전은 해당 프로젝트 지침 우선. 기존 문서의 OKF 전환이나 버전 변경은 별도 작업으로 진행.
+- 적용 대상은 프로젝트에서 계속 참조하는 Markdown 문서. 계획, 설계, 구현 계약, 시험 결과, 의사결정 기록, 운영 절차를 포함. 파일 위치와 작업 단계는 기존 프로젝트 지침 적용.
+- 신규 적용은 OKF v0.3을 기본으로 함. 기존 프로젝트는 채택한 문서 형식과 OKF 버전을 우선 적용하며, 형식 전환과 버전 변경은 별도 작업으로 진행.
+- OKF 지식 문서는 UTF-8 Markdown으로 작성. 파일 첫 줄부터 `---`로 감싼 YAML frontmatter를 두고 문서 종류를 나타내는 문자열 `type`을 기록. 같은 YAML 키의 중복 금지.
+- 팀 기본값으로 `title`에는 사람이 읽을 제목, `description`에는 문서가 답하는 질문이나 다루는 범위를 한 문장으로 기록. `type`은 프로젝트에서 이미 쓰는 명칭 재사용. 예시는 `Plan`, `Design`, `Test Result`, `Runbook`.
+- 관련 문서는 본문에서 표준 Markdown 링크로 연결. 번들 안의 문서는 상대 경로 사용. 외부 자료에 근거한 개별 주장을 인용할 때는 frontmatter의 `sources`에 `resource`와 `id`를 기록하고 본문의 해당 주장에 같은 ID의 각주 `[^id]` 사용. 근거는 직접 확인한 자료로 한정.
+- `tags`, `generated`, `verified` 등 선택 필드는 기록할 사실과 용도가 있을 때 사용. 문서를 작성하거나 수정했다는 이유만으로 검증 완료 정보를 기입하지 않음. 기존 문서를 편집할 때는 뜻을 모르는 확장 키도 보존.
+- `AGENTS.md` 등 도구 지침, 외부 도구가 형식을 정한 파일, 측정 원자료에는 각 파일의 기존 형식 적용.
+
+기준 사양은 [Open Knowledge Format v0.3](https://github.com/open-knowledge-format/open-knowledge-format/blob/527e81aff55992be21507e97004286789126f88c/SPEC.md).
 
 ### 수정·보강 작업의 문서 수준
 
