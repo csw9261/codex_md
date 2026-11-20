@@ -74,6 +74,13 @@ Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, sim
 - 별도 `test` 단계의 범위와 문서는 변경 위험과 프로젝트 요구에 따라 결정. Build 단계의 기본 검증은 필수
 - `deploy`는 출시 또는 배포가 필요한 경우에만 진행. `maintain`은 운영 중인 결과물에 필요한 경우 적용
 
+### 프로젝트 문서 형식
+
+- 문서 체계를 새로 정하는 프로젝트의 Plan·Design·Build, 설계 결정, 운영 가이드에는 Open Knowledge Format(OKF)을 기본 적용.
+- OKF 문서 작성·갱신 시 프로젝트가 채택한 버전의 [공식 명세](https://github.com/open-knowledge-format/open-knowledge-format/blob/main/SPEC.md) 준수. 작성 절차와 템플릿은 [공식 작성 가이드 `okf-generate`](https://github.com/open-knowledge-format/open-knowledge-format/blob/main/skills/okf-generate/SKILL.md) 참고.
+- 적용 범위, 채택 버전과 해당 버전의 명세 링크, 추가 필수 필드, 검사 방법은 프로젝트 문서 안내에 기록. 문서 변경 후 프로젝트에 정해진 검사 실행.
+- 기존 프로젝트의 문서 형식과 적용 버전은 해당 프로젝트 지침 우선. 기존 문서의 OKF 전환이나 버전 변경은 별도 작업으로 진행.
+
 ### 수정·보강 작업의 문서 수준
 
 기존 기능의 수정·보강은 변경 규모보다 영향 범위와 새로 결정할 규칙을 기준으로 문서 수준 선택. 새 문서 작성을 생략하더라도 기존 `plan`·`design`·`build` 문서의 결정·계약·설명이 수정 결과와 달라지면 해당 문서 갱신. 영향 없는 문서는 유지.
